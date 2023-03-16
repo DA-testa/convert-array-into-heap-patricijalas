@@ -46,7 +46,7 @@ def main():
         
     elif 'F' in input_type:
         filename = input()
-        with open("test/" + filename) as f:
+        with open(filename) as f:
             n = int(f.readline())
             data = list(map(int, input().split()))
     else:
