@@ -5,33 +5,20 @@ def build_heap(data):
     swaps = []
     n = len(data)
     for i in range(n// 2 -1, -1, -1):
-        heap(data, i, n)
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-
-
-    return swaps
-
-def heap_sort(data):
-    build_heap(data)
-    for i in range(len(data) -1, 0, -1):
-        data[0], data[i] = data[i], data[0]
-        heap_size = i
-        heap(data, 0, heap_size)
-    data.reverse()
-
-def heap(data, i, heap_size):
-    b=i
+        b=i
     left=2*i+1
     right=2*i+2
  
-    if left < heap_size and data[left] > data[b]:
-        b = left
-    if right < heap_size and data[right] > data[b]:
-        b = right
-    if b != i:
+    if left < n and data[left] > data[b]:
+        b= left
+    if right < n and data[right] > data[b]:
+        b= right
+    if i!= b:
+        swaps.append(i, b)
         data[i], data[b] = data[b], data[i]
-        heap(data, b, heap_size)
+    # TODO: Creat heap and heap sort
+    # try to achieve  O(n) and not O(n2)
+    return swaps    
 def main():
     inp_type=input()
     # TODO : add input and corresponding checks
