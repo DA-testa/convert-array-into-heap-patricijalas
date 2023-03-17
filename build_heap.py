@@ -5,18 +5,19 @@ def build_heap(data):
     swaps = []
     n = len(data)
     for i in range(n// 2 -1, -1, -1):
+      k=i
       while True:
-        b=i
-        left=2*i+1
-        right=2*i+2
+        b=k
+        left=2*k+1
+        right=2*k+2
  
     if left < n and data[left] > data[b]:
         b= left
     if right < n and data[right] > data[b]:
         b= right
-    if i!= b:
-        swaps.append(i, b)
-        data[i], data[b] = data[b], data[i]
+    if b!= k:
+        swaps.append(k, b)
+        data[k], data[b]= data[b], data[k]
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     return swaps    
