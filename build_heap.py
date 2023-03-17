@@ -16,7 +16,7 @@ def build_heap(data):
         if right< n and data[right]< data[b]:
           b= right
         if k!= b:
-          swaps.append(k, b)
+          swaps.append((k, b))
           data[k], data[b]= data[b], data[k]
           k=b
         else:
