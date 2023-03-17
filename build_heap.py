@@ -33,24 +33,21 @@ def heap(data, i, heap_size):
         data[i], data[b] = data[b], data[i]
         heap(data, b, heap_size)
 def main():
-    input_type = input()
+    inp_type=input()
     # TODO : add input and corresponding checks
     # add another input for I or F
     # first two tests are from keyboard, third test is from a file
-
-    if 'I' in input_type:
+    if 'I' in inp_type:
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
         
-        
-    elif 'F' in input_type:
-        filename = input()
-        with open(filename) as f:
+    elif 'F' in inp_type:
+        fn= input()
+        with open(f"tests/{fn}") as f:
             n = int(f.readline())
-            data = list(map(int, input().split()))
-    else:
-        exit()
+            data = list(map(int, f.readline().split()))
+    
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
