@@ -5,9 +5,10 @@ def build_heap(data):
     swaps = []
     n = len(data)
     for i in range(n// 2 -1, -1, -1):
+      while True:
         b=i
-    left=2*i+1
-    right=2*i+2
+        left=2*i+1
+        right=2*i+2
  
     if left < n and data[left] > data[b]:
         b= left
